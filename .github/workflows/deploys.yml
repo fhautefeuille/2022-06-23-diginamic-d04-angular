@@ -4,7 +4,7 @@ name: Deploy To GitHub Pages
 on:
   push:
   branches:
-  - 'francois-hautefeuille'
+    - 'francois-hautefeuille'
 
 jobs:
   build:
