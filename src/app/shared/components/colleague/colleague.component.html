@@ -1,11 +1,14 @@
-<div class="card">
-  <div class="card-body text-center">
-    <img src="{{col.photo}}" alt="Photo de {{col.pseudo}}" class="img-fluid">
-    <br>
-    {{col.pseudo | uppercase}}
-    <br>
-    {{col.score | score}}
-    <br>
-    <tc-like-hate (clickLikeHate)="changeScore($event)" [score]="col.score"></tc-like-hate>
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-body text-center">
+      <img src="{{col.photo}}" alt="Photo de {{col.pseudo}}" class="img-fluid">
+      <br>
+      {{col.pseudo | uppercase}}
+      <br>
+      {{col.score | score}}
+      <br>
+      <tc-like-hate (clickLikeHate)="changeScore($event)" [score]="col.score"></tc-like-hate>
+    </div>
   </div>
 </div>
+
