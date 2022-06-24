@@ -26,7 +26,7 @@ export class ColleagueListComponent implements OnInit {
     },
     {
       pseudo : 'collegue1',
-      score : 100,
+      score : 0,
       photo : '$'
     },
     {
