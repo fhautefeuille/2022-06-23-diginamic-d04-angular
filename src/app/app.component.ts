@@ -1,3 +1,4 @@
+import { LikeHate } from './models/like-hate';
 import { Component } from '@angular/core';
 
 @Component({
@@ -9,7 +10,8 @@ export class AppComponent {
   title = 'top-colleagues';
   collegue1 = {
     pseudo : 'c1',
-    score : '+10',
+    score : 100,
     photo : '$'
   }
+
 }

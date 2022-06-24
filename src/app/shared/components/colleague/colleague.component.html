@@ -2,5 +2,9 @@
 <div>
   {{col.pseudo}}
   <br>
+  <ng-container *ngIf="col.score>0">+</ng-container>
   {{col.score}}
+  <br>
+  <tc-like-hate (clickLikeHate)="changeScore($event)" [score]="col.score"></tc-like-hate>
 </div>
+
