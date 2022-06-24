@@ -1,0 +1,19 @@
+<div class="card" style="width: 90%;">
+  <div class="card-header">Historique</div>
+  <div class="card-body text-center">
+    <div *ngFor="let vote of listVote; let voteI=index" class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-4">
+            <img src="{{vote.photo}}" alt="Photo de {{vote.pseudo}}" class="img-fluid">
+          </div>
+          <div class="col-8">
+            <p>{{vote.pseudo}}</p>
+            <p>{{vote.pseudo}} est détesté(e), son score est de {{vote.score}}</p>
+            <button (click)="supVote(voteI)">Supprimer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

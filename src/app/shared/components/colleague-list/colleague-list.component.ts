@@ -12,47 +12,47 @@ export class ColleagueListComponent implements OnInit {
     {
       pseudo : 'collegue1',
       score : 100,
-      photo : '$'
+      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
     },
     {
       pseudo : 'collegue1',
       score : 999,
-      photo : '$'
+      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
     },
     {
       pseudo : 'collegue1',
       score : 100,
-      photo : '$'
+      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
     },
     {
       pseudo : 'collegue1',
       score : 0,
-      photo : '$'
+      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
     },
     {
       pseudo : 'collegue1',
       score : 100,
-      photo : '$'
+      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
     },
     {
       pseudo : 'collegue1',
       score : 100,
-      photo : '$'
+      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
     },
     {
       pseudo : 'collegue1',
       score : -999,
-      photo : '$'
+      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
     },
     {
       pseudo : 'collegue1',
       score : 100,
-      photo : '$'
+      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
     },
     {
       pseudo : 'collegue1',
       score : 100,
-      photo : '$'
+      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
     },
   ]
 
