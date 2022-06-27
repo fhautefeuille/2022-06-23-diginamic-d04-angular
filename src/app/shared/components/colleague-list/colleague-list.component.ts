@@ -1,3 +1,4 @@
+import { ColleagueService } from './../../../providers/colleague.service';
 import { Component, OnInit } from '@angular/core';
 import { Colleague } from 'src/app/models/colleague';
 
@@ -8,57 +9,12 @@ import { Colleague } from 'src/app/models/colleague';
 })
 export class ColleagueListComponent implements OnInit {
 
-  listCol : Colleague[] = [
-    {
-      pseudo : 'collegue1',
-      score : 100,
-      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-    },
-    {
-      pseudo : 'collegue1',
-      score : 999,
-      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-    },
-    {
-      pseudo : 'collegue1',
-      score : 100,
-      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-    },
-    {
-      pseudo : 'collegue1',
-      score : 0,
-      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-    },
-    {
-      pseudo : 'collegue1',
-      score : 100,
-      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-    },
-    {
-      pseudo : 'collegue1',
-      score : 100,
-      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-    },
-    {
-      pseudo : 'collegue1',
-      score : -999,
-      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-    },
-    {
-      pseudo : 'collegue1',
-      score : 100,
-      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-    },
-    {
-      pseudo : 'collegue1',
-      score : 100,
-      photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-    },
-  ]
+  listCol : Colleague[] = [];
 
-  constructor() { }
+  constructor(private colleagueSrv: ColleagueService) { }
 
   ngOnInit(): void {
+    this.listCol = this.colleagueSrv.list();
   }
 
 }

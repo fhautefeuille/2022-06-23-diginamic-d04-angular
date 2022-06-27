@@ -6,11 +6,11 @@
         <div class="card-body">
           <div class="row">
             <div class="col-sm-4">
-              <img src="{{vote.photo}}" alt="Photo de {{vote.pseudo}}" class="img-fluid">
+              <img src="{{vote.colleague.photo}}" alt="Photo de {{vote.colleague.pseudo}}" class="img-fluid">
             </div>
             <div class="col-sm-8">
-              <p>{{vote.pseudo}}</p>
-              <p>{{vote.pseudo}} est détesté(e), son score est de {{vote.score}}</p>
+              <p>{{vote.colleague.pseudo}}</p>
+              <p>{{vote.colleague.pseudo}} est détesté(e), son score est de {{vote.colleague.score}}</p>
               <button (click)="supVote(voteI)">Supprimer</button>
             </div>
           </div>
