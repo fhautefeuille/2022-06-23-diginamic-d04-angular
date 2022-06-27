@@ -16,42 +16,42 @@ export class ColleagueService {
         photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
       },
       {
-        pseudo : 'collegue1',
+        pseudo : 'collegue2',
         score : 999,
         photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
       },
       {
-        pseudo : 'collegue1',
+        pseudo : 'collegue3',
         score : 100,
         photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
       },
       {
-        pseudo : 'collegue1',
+        pseudo : 'collegue4',
         score : 0,
         photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
       },
       {
-        pseudo : 'collegue1',
+        pseudo : 'collegue5',
         score : 100,
         photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
       },
       {
-        pseudo : 'collegue1',
+        pseudo : 'collegue6',
         score : 100,
         photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
       },
       {
-        pseudo : 'collegue1',
+        pseudo : 'collegue7',
         score : -999,
         photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
       },
       {
-        pseudo : 'collegue1',
+        pseudo : 'collegue8',
         score : 100,
         photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
       },
       {
-        pseudo : 'collegue1',
+        pseudo : 'collegue9',
         score : 100,
         photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
       },
