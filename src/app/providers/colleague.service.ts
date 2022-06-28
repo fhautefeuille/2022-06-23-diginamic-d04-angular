@@ -1,60 +1,18 @@
+import { Observable } from 'rxjs';
 import { Colleague } from 'src/app/models/colleague';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+const URL_COLLEAGUES = 'https://colleagues-app.herokuapp.com/api/v2/colleagues'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ColleagueService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  list(): Colleague[] {
-    return [
-      {
-        pseudo : 'collegue1',
-        score : 100,
-        photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-      },
-      {
-        pseudo : 'collegue2',
-        score : 999,
-        photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-      },
-      {
-        pseudo : 'collegue3',
-        score : 100,
-        photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-      },
-      {
-        pseudo : 'collegue4',
-        score : 0,
-        photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-      },
-      {
-        pseudo : 'collegue5',
-        score : 100,
-        photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-      },
-      {
-        pseudo : 'collegue6',
-        score : 100,
-        photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-      },
-      {
-        pseudo : 'collegue7',
-        score : -999,
-        photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-      },
-      {
-        pseudo : 'collegue8',
-        score : 100,
-        photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-      },
-      {
-        pseudo : 'collegue9',
-        score : 100,
-        photo : 'https://img.pokemondb.net/artwork/original/pikachu-gen1-jp.jpg'
-      },
-    ]
+  list(): Observable<Colleague[]> {
+    return this.http.get<Colleague[]>(URL_COLLEAGUES)
   }
 }

@@ -14,7 +14,7 @@ export class ColleagueListComponent implements OnInit {
   constructor(private colleagueSrv: ColleagueService) { }
 
   ngOnInit(): void {
-    this.listCol = this.colleagueSrv.list();
+    this.colleagueSrv.list().subscribe(listC=>this.listCol=listC);
   }
 
 }

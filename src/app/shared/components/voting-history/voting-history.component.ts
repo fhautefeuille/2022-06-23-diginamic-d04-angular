@@ -20,8 +20,8 @@ export class VotingHistoryComponent implements OnInit {
   constructor(private voteSrv : VoteService) { }
 
   ngOnInit(): void {
-    this.listVote = this.voteSrv.list();
-    this.abo = this.voteSrv.abonner().subscribe(v=>this.listVote.push(v))
+    this.voteSrv.list().subscribe(listV=>this.listVote=listV);
+    this.abo = this.voteSrv.abonner().subscribe(v=>this.listVote.unshift(v))
   }
 
   ngOnDestroy(): void {

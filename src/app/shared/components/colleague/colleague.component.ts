@@ -13,16 +13,8 @@ export class ColleagueComponent implements OnInit {
   @Input() col!: Colleague;
 
   changeScore(likeOrHate : LikeHate){
-    if(likeOrHate==LikeHate.LIKE){
-      this.col.score += 1;
-    }
-    if(likeOrHate==LikeHate.HATE) {
-      this.col.score -= 1;
-    }
-    this.voteSrv.ajouterVote({
-      colleague:{...this.col},
-      vote: likeOrHate
-    })
+    this.voteSrv.ajouterVote(this.col,likeOrHate)
+      .subscribe(col => this.col.score = col.score);
   }
 
   constructor(private voteSrv:VoteService ) { }
