@@ -6,28 +6,40 @@
       <div class="col-sm-11">
         <input type="text" formControlName="pseudo" class="form-control" id="pseudoInput">
       </div>
-      <p *ngIf="attributInvalid('pseudo')">Pseudo requis</p>
+      <p *ngIf="attributInvalid('pseudo')">
+        <small class="text-danger">Pseudo requis</small>
+      </p>
     </div>
     <div class="form-group row mb-3">
       <label for="nomInput" class="col-sm-1 col-form-label">Nom</label>
       <div class="col-sm-11">
         <input type="text" formControlName="last" class="form-control" id="nomInput">
       </div>
-      <p *ngIf="attributInvalid('last')">Nom avec 2 caractères minimum requis</p>
+      <p *ngIf="attributInvalid('last')">
+        <small *ngIf="formCreateCol.get('last')?.hasError('required')" class="text-danger">Nom requis</small>
+        <small *ngIf="formCreateCol.get('last')?.hasError('minlength')" class="text-danger">2 caractères minimum requis</small>
+      </p>
     </div>
     <div class="form-group row mb-3">
       <label for="prenomInput" class="col-sm-1 col-form-label">Prenom</label>
       <div class="col-sm-11">
         <input type="text" formControlName="first" class="form-control" id="prenomInput">
       </div>
-    <p *ngIf="attributInvalid('first')">Prénom avec 2 caractères minimum requis</p>
+    <!-- <p *ngIf="formCreateCol.controls['first']?.errors['nomDiff']">{{formCreateCol.get('first')?.errors|json}}</p> -->
+    <p *ngIf="attributInvalid('first')">
+      <small *ngIf="formCreateCol.get('first')?.hasError('nomDiff')" class="text-danger">Le prénom doit être différent du nom</small>
+      <small *ngIf="formCreateCol.get('first')?.hasError('required')" class="text-danger">Prénom requis</small>
+      <small *ngIf="formCreateCol.get('first')?.hasError('minlength')" class="text-danger">2 caractères minimum requis</small>
+    </p>
     </div>
     <div class="form-group row mb-3">
       <label for="photoInput" class="col-sm-1 col-form-label">Photo URL</label>
       <div class="col-sm-11">
         <input type="text" formControlName="photo" class="form-control" id="photoInput">
       </div>
-      <p *ngIf="attributInvalid('photo')">URL photo requis</p>
+      <p *ngIf="attributInvalid('photo')">
+        <small class="text-danger">URL photo requis</small>
+      </p>
     </div>
     <button type="submit" class="btn btn-outline-dark" [disabled]="!formCreateCol.valid" (click)="envoyerAjout()">Ajouter</button>
   </form>

@@ -1,6 +1,6 @@
 import { ColleagueService } from './../../../providers/colleague.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { newColleague } from 'src/app/models/colleague';
 
 @Component({
@@ -37,7 +37,8 @@ export class CreateColleagueReactiveFormsComponent implements OnInit {
       first:['', {
         validators: [
           Validators.required,
-          Validators.minLength(2)
+          Validators.minLength(2),
+          this.checkDiffName
         ],
         asyncValidators:[]
       }],
@@ -60,6 +61,15 @@ export class CreateColleagueReactiveFormsComponent implements OnInit {
   envoyerAjout(){
     this.collegueSrv.ajouterCollegue(this.formCreateCol.value).subscribe(newC => this.nouvCollegue=newC);
     this.formCreateCol.reset();
+  }
+
+  checkDiffName(control: FormControl): ValidationErrors | null {
+    const first = control.value;
+    if(first != control.root.value.last) {
+      return null;
+    } else {
+      return {nomDiff: 'Le nom et prénom doivent être différent'}
+    }
   }
 
 }
