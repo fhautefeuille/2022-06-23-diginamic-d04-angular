@@ -1,3 +1,4 @@
+import { FullColleague } from './../models/colleague';
 import { LikeHate } from 'src/app/models/like-hate';
 import { Colleague } from 'src/app/models/colleague';
 import { HttpClient } from '@angular/common/http';
@@ -22,14 +23,14 @@ export class VoteService {
 
   ajouterVote(collegue : Colleague, vote : LikeHate){
 
-    return this.http.post<any>(URL_HISTO_VOTES, {
+    return this.http.post<FullColleague>(URL_HISTO_VOTES, {
       "pseudo":collegue.pseudo,
       "like_hate":vote
     }).pipe(
-      tap(col=>this.voteSub.next({
-        colleague: col,
+      tap(fullCol=>this.voteSub.next({
+        colleague: fullCol,
         vote,
-        score: col.score}
+        score: fullCol.score}
       ))
     )
   }

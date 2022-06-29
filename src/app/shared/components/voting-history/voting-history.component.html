@@ -10,7 +10,10 @@
             </div>
             <div class="col-sm-8">
               <p>{{vote.colleague.pseudo}}</p>
-              <p>{{vote.colleague.pseudo}} est détesté(e), son score est de {{vote.colleague.score}}</p>
+              <p>{{vote.colleague.pseudo}} est
+                <ng-container *ngIf="vote.score<=0">détesté(e),</ng-container>
+                <ng-container *ngIf="vote.score>0">aimé(e),</ng-container>
+               son score est de {{vote.score}}</p>
               <button (click)="supVote(voteI)">Supprimer</button>
             </div>
           </div>
