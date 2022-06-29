@@ -1,3 +1,4 @@
+import { newColleague, FullColleague } from './../models/colleague';
 import { Observable } from 'rxjs';
 import { Colleague } from 'src/app/models/colleague';
 import { Injectable } from '@angular/core';
@@ -15,4 +16,15 @@ export class ColleagueService {
   list(): Observable<Colleague[]> {
     return this.http.get<Colleague[]>(URL_COLLEAGUES)
   }
+
+  ajouterCollegue(nouvCol: newColleague) {
+    return this.http.post<FullColleague>(URL_COLLEAGUES,
+      {
+        "pseudo": nouvCol.pseudo,
+        "last": nouvCol.last,
+        "first": nouvCol.first,
+        "photo": nouvCol.photo
+      })
+  }
+
 }

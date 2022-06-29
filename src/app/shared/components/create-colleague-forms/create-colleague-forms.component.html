@@ -1,0 +1,34 @@
+<h2>Créer un collègue </h2>
+<div class="container mb-3">
+  <form method="post" #statutForm="ngForm">
+    <div class="form-group row mb-3" >
+      <label for="pseudoInput" class="col-sm-1 col-form-label">Pseudo</label>
+      <div class="col-sm-11">
+        <input type="text" #statutPseudo="ngModel" name="pseudo" id="pseudoInput" required [(ngModel)]="nouvCollegue.pseudo">
+      </div>
+      <p *ngIf="statutPseudo.dirty && statutPseudo.invalid">Pseudo requis</p>
+    </div>
+    <div class="form-group row mb-3">
+      <label for="pseudoNom" class="col-sm-1 col-form-label">Nom</label>
+      <div class="col-sm-11">
+        <input type="text" #statutNom="ngModel" name="nom" id="pseudoNom" required minlength="2" [(ngModel)]="nouvCollegue.last">
+      </div>
+      <p *ngIf="statutNom.dirty && statutNom.invalid">Nom avec 2 caractères minimum requis</p>
+    </div>
+    <div class="form-group row mb-3">
+      <label for="pseudoPrenom" class="col-sm-1 col-form-label">Prenom</label>
+      <div class="col-sm-11">
+        <input type="text" #statutPrenom="ngModel" name="prenom" id="pseudoPrenom" required minlength="2" [(ngModel)]="nouvCollegue.first">
+      </div>
+      <p *ngIf="statutPrenom.dirty && statutPrenom.invalid">Prénom avec 2 caractères minimum requis</p>
+    </div>
+    <div class="form-group row mb-3">
+      <label for="pseudoPhoto" class="col-sm-1 col-form-label">Photo URL</label>
+      <div class="col-sm-11">
+        <input type="text" #statutPhoto="ngModel" name="photo" id="pseudoPhoto" required [(ngModel)]="nouvCollegue.photo">
+      </div>
+      <p *ngIf="statutPhoto.dirty && statutPhoto.invalid">URL photo requis</p>
+    </div>
+    <button type="submit" class="btn btn-outline-dark" [disabled]="statutForm.invalid" (click)="envoyerAjout()">Ajouter</button>
+  </form>
+</div>
