@@ -9,23 +9,23 @@
       <p *ngIf="statutPseudo.dirty && statutPseudo.invalid">Pseudo requis</p>
     </div>
     <div class="form-group row mb-3">
-      <label for="pseudoNom" class="col-sm-1 col-form-label">Nom</label>
+      <label for="nomInput" class="col-sm-1 col-form-label">Nom</label>
       <div class="col-sm-11">
-        <input type="text" #statutNom="ngModel" name="nom" id="pseudoNom" required minlength="2" [(ngModel)]="nouvCollegue.last">
+        <input type="text" #statutNom="ngModel" name="nom" id="nomInput" required minlength="2" [(ngModel)]="nouvCollegue.last">
       </div>
       <p *ngIf="statutNom.dirty && statutNom.invalid">Nom avec 2 caractères minimum requis</p>
     </div>
     <div class="form-group row mb-3">
-      <label for="pseudoPrenom" class="col-sm-1 col-form-label">Prenom</label>
+      <label for="prenomInput" class="col-sm-1 col-form-label">Prenom</label>
       <div class="col-sm-11">
-        <input type="text" #statutPrenom="ngModel" name="prenom" id="pseudoPrenom" required minlength="2" [(ngModel)]="nouvCollegue.first">
+        <input type="text" #statutPrenom="ngModel" name="prenom" id="prenomInput" required minlength="2" [(ngModel)]="nouvCollegue.first">
       </div>
       <p *ngIf="statutPrenom.dirty && statutPrenom.invalid">Prénom avec 2 caractères minimum requis</p>
     </div>
     <div class="form-group row mb-3">
-      <label for="pseudoPhoto" class="col-sm-1 col-form-label">Photo URL</label>
+      <label for="photoInput" class="col-sm-1 col-form-label">Photo URL</label>
       <div class="col-sm-11">
-        <input type="text" #statutPhoto="ngModel" name="photo" id="pseudoPhoto" required [(ngModel)]="nouvCollegue.photo">
+        <input type="text" #statutPhoto="ngModel" name="photo" id="photoInput" required [(ngModel)]="nouvCollegue.photo">
       </div>
       <p *ngIf="statutPhoto.dirty && statutPhoto.invalid">URL photo requis</p>
     </div>

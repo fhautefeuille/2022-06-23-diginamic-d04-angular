@@ -1,0 +1,34 @@
+<h2>Créer un collègue - Formulaire Réactif</h2>
+<div class="container mb-3">
+  <form method="post" [formGroup]="formCreateCol">
+    <div class="form-group row mb-3" >
+      <label for="pseudoInput" class="col-sm-1 col-form-label">Pseudo</label>
+      <div class="col-sm-11">
+        <input type="text" formControlName="pseudo" class="form-control" id="pseudoInput">
+      </div>
+      <p *ngIf="attributInvalid('pseudo')">Pseudo requis</p>
+    </div>
+    <div class="form-group row mb-3">
+      <label for="nomInput" class="col-sm-1 col-form-label">Nom</label>
+      <div class="col-sm-11">
+        <input type="text" formControlName="last" class="form-control" id="nomInput">
+      </div>
+      <p *ngIf="attributInvalid('last')">Nom avec 2 caractères minimum requis</p>
+    </div>
+    <div class="form-group row mb-3">
+      <label for="prenomInput" class="col-sm-1 col-form-label">Prenom</label>
+      <div class="col-sm-11">
+        <input type="text" formControlName="first" class="form-control" id="prenomInput">
+      </div>
+    <p *ngIf="attributInvalid('first')">Prénom avec 2 caractères minimum requis</p>
+    </div>
+    <div class="form-group row mb-3">
+      <label for="photoInput" class="col-sm-1 col-form-label">Photo URL</label>
+      <div class="col-sm-11">
+        <input type="text" formControlName="photo" class="form-control" id="photoInput">
+      </div>
+      <p *ngIf="attributInvalid('photo')">URL photo requis</p>
+    </div>
+    <button type="submit" class="btn btn-outline-dark" [disabled]="!formCreateCol.valid" (click)="envoyerAjout()">Ajouter</button>
+  </form>
+</div>

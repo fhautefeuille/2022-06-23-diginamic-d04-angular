@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { CreateColleagueModule } from './pages/create-colleague/create-colleague.module';
+import { CreateColleagueReactiveModule } from './pages/create-colleague-reactive/create-colleague-reactive.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CreateColleagueModule } from './pages/create-colleague/create-colleague
     SharedModule,
     WelcomeModule,
     HttpClientModule,
-    CreateColleagueModule
+    CreateColleagueModule,
+    CreateColleagueReactiveModule
   ],
   providers: [],
   bootstrap: [AppComponent]
