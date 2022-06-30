@@ -1,6 +1,7 @@
+import { catchError, map, Observable, of } from 'rxjs';
 import { ColleagueService } from './../../../providers/colleague.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { newColleague } from 'src/app/models/colleague';
 
 @Component({
@@ -25,7 +26,7 @@ export class CreateColleagueReactiveFormsComponent implements OnInit {
         validators: [
           Validators.required,
         ],
-        asyncValidators:[]
+        asyncValidators:[this.checkPseudo.bind(this)]
       }],
       last:['', {
         validators: [
@@ -72,4 +73,14 @@ export class CreateColleagueReactiveFormsComponent implements OnInit {
     }
   }
 
+  checkPseudo(control: AbstractControl): Observable <ValidationErrors | null> {
+    if(control.value === null) {
+      return of(null)
+    }
+    return this.collegueSrv.getPseudo(control.value)
+      .pipe(
+        map(()=> <ValidationErrors> {pseudoInvalid : "Pseudo existe déjà"}),
+        catchError(()=>of(null))
+      )
+  }
 }

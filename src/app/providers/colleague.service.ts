@@ -27,4 +27,8 @@ export class ColleagueService {
       })
   }
 
+  getPseudo(pseudo: string): Observable<FullColleague> {
+    return this.http.get<FullColleague>(URL_COLLEAGUES + "/" + pseudo)
+  }
+
 }
