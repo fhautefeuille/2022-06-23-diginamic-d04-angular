@@ -3,7 +3,7 @@
     <div class="card-body text-center">
       <img src="{{col.photo}}" alt="Photo de {{col.pseudo}}" class="img-fluid">
       <br>
-      {{col.pseudo | uppercase}}
+      <a [routerLink]="['/colleagues', col.pseudo]">{{col.pseudo | uppercase}}</a>
       <br>
       {{col.score | score}}
       <br>

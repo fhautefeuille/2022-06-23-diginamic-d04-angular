@@ -1,3 +1,4 @@
+import { InfoColleagueModule } from './pages/info-colleague/info-colleague.module';
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomeModule } from './pages/welcome/welcome.module';
 import { NgModule } from '@angular/core';
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     CreateColleagueModule,
     CreateColleagueReactiveModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InfoColleagueModule
   ],
   providers: [],
   bootstrap: [AppComponent]
