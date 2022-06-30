@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { catchError, map, Observable, of } from 'rxjs';
 import { ColleagueService } from './../../../providers/colleague.service';
 import { Component, OnInit } from '@angular/core';
@@ -20,7 +21,7 @@ export class CreateColleagueReactiveFormsComponent implements OnInit {
     photo : '',
   }
 
-  constructor(private fb: FormBuilder, private collegueSrv: ColleagueService) {
+  constructor(private fb: FormBuilder, private collegueSrv: ColleagueService, private router: Router) {
     this.formCreateCol = fb.group({
       pseudo:['', {
         validators: [
@@ -62,6 +63,7 @@ export class CreateColleagueReactiveFormsComponent implements OnInit {
   envoyerAjout(){
     this.collegueSrv.ajouterCollegue(this.formCreateCol.value).subscribe(newC => this.nouvCollegue=newC);
     this.formCreateCol.reset();
+    this.router.navigateByUrl('/colleagues')
   }
 
   checkDiffName(control: FormControl): ValidationErrors | null {

@@ -1,6 +1,7 @@
 import { ColleagueService } from './../../../providers/colleague.service';
 import { newColleague } from './../../../models/colleague';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'tc-create-colleague-forms',
@@ -18,9 +19,10 @@ export class CreateColleagueFormsComponent implements OnInit {
 
   envoyerAjout(){
     this.collegueSrv.ajouterCollegue(this.nouvCollegue).subscribe(newC => this.nouvCollegue=newC);
+    this.router.navigateByUrl('/colleagues');
   }
 
-  constructor(private collegueSrv: ColleagueService) { }
+  constructor(private collegueSrv: ColleagueService, private router: Router) { }
 
   ngOnInit(): void {
   }
