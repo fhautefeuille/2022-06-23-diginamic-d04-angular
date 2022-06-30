@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  bool: boolean = true;
+
+  collapse(){
+    this.bool=!this.bool;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
