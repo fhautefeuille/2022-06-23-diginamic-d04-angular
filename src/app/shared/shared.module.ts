@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './../app-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LikeHateComponent } from '../shared/components/like-hate/like-hate.component';
@@ -9,6 +10,7 @@ import { CounterComponent } from '../shared/components/counter/counter.component
 import { CreateColleagueFormsComponent } from './components/create-colleague-forms/create-colleague-forms.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateColleagueReactiveFormsComponent } from './components/create-colleague-reactive-forms/create-colleague-reactive-forms.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 
@@ -21,12 +23,14 @@ import { CreateColleagueReactiveFormsComponent } from './components/create-colle
     VotingHistoryComponent,
     CounterComponent,
     CreateColleagueFormsComponent,
-    CreateColleagueReactiveFormsComponent
+    CreateColleagueReactiveFormsComponent,
+    MenuComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   exports: [
     LikeHateComponent,
@@ -36,7 +40,8 @@ import { CreateColleagueReactiveFormsComponent } from './components/create-colle
     VotingHistoryComponent,
     CounterComponent,
     CreateColleagueFormsComponent,
-    CreateColleagueReactiveFormsComponent
+    CreateColleagueReactiveFormsComponent,
+    MenuComponent
   ]
 })
 export class SharedModule { }

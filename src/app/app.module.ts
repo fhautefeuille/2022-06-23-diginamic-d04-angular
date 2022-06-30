@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { CreateColleagueModule } from './pages/create-colleague/create-colleague.module';
 import { CreateColleagueReactiveModule } from './pages/create-colleague-reactive/create-colleague-reactive.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CreateColleagueReactiveModule } from './pages/create-colleague-reactive
     WelcomeModule,
     HttpClientModule,
     CreateColleagueModule,
-    CreateColleagueReactiveModule
+    CreateColleagueReactiveModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
